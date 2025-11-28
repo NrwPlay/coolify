@@ -165,6 +165,17 @@ All notable changes to this project will be documented in this file.
 - Add validation methods for S3 bucket names, paths, and server paths; update import logic to prevent command injection
 - Create migration for webhook notification settings and cloud init scripts tables
 - Update version numbers to 4.0.0-beta.448 and 4.0.0-beta.449
+- Custom docker entrypoint
+- Custom docker entrypoint (#7097)
+- Developer view for shared env variables
+- Make text area larger since its full page
+- Add database transactions and component-level authorization to shared variables
+- Developer view for shared environment variables (#7091)
+- Add support for syncing versions.json to GitHub repository via PR
+- Add Docker build cache preservation toggles and development logging
+- Add Docker build cache preservation toggles (#7352)
+- Add functionality to sync releases.json and versions.json to GitHub in one PR
+- Add availableSharedVariables method and enhance env-var-input component for better password handling
 
 ### 🐛 Bug Fixes
 
@@ -459,6 +470,40 @@ All notable changes to this project will be documented in this file.
 - Update webhook notification settings migration to use updateOrInsert and add logging
 - Prevent overwriting existing webhook notification settings during migration
 - Correct webhook notification settings migration and model (#7333)
+- Preserve Docker build cache by excluding dynamic variables from build-time contexts
+- Preserve Docker build cache by excluding dynamic variables (#7339)
+- Handle escaped quotes in docker entrypoint parsing
+- Dispatch success message after transaction commits
+- Show shared env scopes dropdown even when no variables exist
+- Show shared env scopes dropdown even when no variables exist (#7342)
+- Add authorization checks for environment and project views
+- Update version numbers to 4.0.0-beta.449 and 4.0.0-beta.450
+- Update version number to 4.0.0-beta.450
+- Resolve uncloseable database restore modal on MariaDB import (#7335)
+- Resolve uncloseable database restore modal (#7345)
+- Add -L flag to curl commands for CDN redirects
+- Add -L flag to curl commands for CDN redirects (#7349)
+- Add bash control structure keywords to sudo command processing
+- Add bash control structure keywords to sudo processing (#7353)
+- Update coolify version numbers to 4.0.0-beta.450 and 4.0.0-beta.451
+- Update version numbers to 4.0.0-beta.451 and 4.0.0-beta.452
+- Resolve Docker validation race conditions and sudo prefix bug
+- Resolve Docker validation race conditions and sudo prefix bug (#7368)
+- Ensure syncData is called with both true and false parameters in submit method
+- Update environment variable form to use consistent naming and improve checkbox logic
+- Log warning on backup failure during name cleanup process
+- Improve error handling and output capturing during Git operations in SyncBunny command
+- Add additional bash keywords to prevent sudo prefix in command parsing
+- Conditionally enable buildtime checkbox based on environment type
+- Prevent SERVICE_FQDN/SERVICE_URL path duplication on FQDN updates
+- Prevent SERVICE_FQDN/SERVICE_URL path duplication (#7370)
+- Trigger configuration changed detection for build settings
+- Trigger configuration changed detection for build settings (#7371)
+- Enhance security by validating and escaping database names, file paths, and proxy configuration filenames to prevent command injection
+- Enhance validation for database names and filenames to prevent command injection
+- Enhance security by validating and escaping database names, file paths, and proxy configuration filenames (#7375)
+- *(docker)* Migrate database start actions from --time to -t flag
+- *(docker)* Migrate database start actions from --time to -t flag (#7388)
 
 ### 💼 Other
 
@@ -484,6 +529,8 @@ All notable changes to this project will be documented in this file.
 - *(Documenso)* Resolve pending status issue for Documenso deployments (fixes #1767)
 - Codimd Service docker-compose (#7096)
 - Add ray logging to trace S3DownloadFinished event flow
+- Minimize logging in cleanup commands
+- Minimize logging in cleanup commands (#7356)
 
 ### 🚜 Refactor
 
@@ -561,6 +608,8 @@ All notable changes to this project will be documented in this file.
 - *(CheckTraefikVersionForServerJob)* Remove unnecessary onQueue assignment in constructor
 - *(migration)* Remove unnecessary index on team_id in cloud_init_scripts table
 - Send immediate Traefik version notifications instead of delayed aggregation
+- Fix variable scope in docker entrypoint parsing
+- Fix variable scope in docker entrypoint parsing (#7341)
 
 ### 📚 Documentation
 
@@ -592,6 +641,8 @@ All notable changes to this project will be documented in this file.
 - Consolidate AI documentation into .ai/ directory
 - Consolidate AI documentation into .ai/ directory (#7274)
 - Add comprehensive container status monitoring system documentation
+- Update changelog
+- Replace brittle line number references with maintainable method descriptions
 
 ### ⚡ Performance
 
@@ -611,6 +662,7 @@ All notable changes to this project will be documented in this file.
 - Add unit tests for ServerPatchCheck notification URL generation
 - Fix ServerPatchCheckNotification tests to avoid global state pollution
 - Add unit tests for Dockerfile ARG insertion logic
+- Add tests for shared environment variable spacing and resolution
 
 ### ⚙️ Miscellaneous Tasks
 
@@ -641,6 +693,7 @@ All notable changes to this project will be documented in this file.
 - *(n8n)* Upgrade n8n image version to 1.119.2 in compose templates
 - *(n8n)* Upgrade n8n image version to 1.119.2 in compose templates (#7236)
 - Better structure of readme
+- Update migration timestamp to 2025_11_26_124200
 
 ## [4.0.0-beta.434] - 2025-10-03
 
