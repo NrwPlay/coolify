@@ -176,6 +176,20 @@ All notable changes to this project will be documented in this file.
 - Add Docker build cache preservation toggles (#7352)
 - Add functionality to sync releases.json and versions.json to GitHub in one PR
 - Add availableSharedVariables method and enhance env-var-input component for better password handling
+- Add predefined network connection for pgAdmin and postgresus services
+- Logs color highlight based on log level - visual improvement
+- *(ui)* Logs color highlight based on log level (#7288)
+- Improve new resource selection UI layout and styling
+- Improve trademark policy on new resource page using proper callout component instead of plain text
+- *(ui)* Improve new resource page UI layout and styling (#7291)
+- Add migration for performance indexes on multiple tables
+- Add scheduled job to cleanup orphaned PR containers
+- Add Hetzner server provisioning API endpoints
+- Add UUID column to cloud_provider_tokens and populate existing records
+- Add Hetzner server provisioning API endpoints (#7562)
+- Add deterministic UUIDs to development seeders
+- Add deterministic UUIDs to dev seeders (#7584)
+- *(api)* Improve OpenAPI spec and add rate limit handling for Hetzner
 
 ### 🐛 Bug Fixes
 
@@ -504,6 +518,47 @@ All notable changes to this project will be documented in this file.
 - Enhance security by validating and escaping database names, file paths, and proxy configuration filenames (#7375)
 - *(docker)* Migrate database start actions from --time to -t flag
 - *(docker)* Migrate database start actions from --time to -t flag (#7388)
+- *(docker)* Migrate database start actions from --time to -t flag
+- Prevent Livewire snapshot error in database restore modal
+- Prevent Livewire snapshot error in database restore (#7385)
+- Update service creation logic to only connect pgAdmin to Docker network
+- *(ui)* Incorrect caddy proxy config file path on proxy page (#6722)
+- Add support for nixpacks plan variables in buildtime environment
+- Prevent duplicate environment variables in buildtime.env
+- Prevent duplicate environment variables in buildtime.env and support nixpacks plan variable overrides (#7373)
+- *(docker)* Replace deprecated --time flag with -t for full compatibility across Docker versions (#6807)
+- Improved regex to support timestamps with either "T" or space separators on logs to differentiate timestamps from actual log content
+- *(docker)* Migrate database start actions from --time to -t flag (#7390)
+- Search bar floating on new resource page
+- Add missing yellow border for search box focus in dark mode for new resource page
+- Remove redundant condition for displaying databases in resource selection
+- Update border color utility for input-sticky-active and coolbox components
+- Resolve webhook notification settings migration conflict
+- Resolve webhook notification settings migration conflict (#7393)
+- Bypass port validation when saving advanced checkboxes
+- Bypass port validation when saving advanced checkboxes (#7435)
+- Prevent cleanup exceptions from marking successful deployments as failed
+- Remove logging of cleanup failures to prevent false deployment errors
+- Log unhealthy container status during health check
+- Prevent cleanup exceptions from marking successful deployments as failed (#7460)
+- Move base directory path normalization to frontend
+- Apply frontend path normalization to general settings page
+- Prevent invalid paths from being saved to database
+- Restore original base_directory on compose validation failure
+- Move base directory path normalization to frontend (#7437)
+- Add Arch Linux support for Docker installation
+- Add Arch Linux support for Docker installation (#7408)
+- Remove {{port}} template variable and ensure ports are always appended to preview URLs
+- Remove {{port}} template variable from preview URLs (#7527)
+- Change default session driver from database to redis
+- Add comprehensive PR cleanup to GitLab, Bitbucket, and Gitea webhooks
+- Escape container name in orphaned PR cleanup job
+- Add comprehensive PR cleanup to GitLab, Bitbucket, and Gitea (#7537)
+- Prevent terminal disconnects when browser tab loses focus
+- Prevent terminal disconnects when browser tab loses focus (#7538)
+- Rename validate() to validateToken() to avoid parent method conflict
+- Add UUID support to CloudProviderToken model
+- Return actual error message from token validation endpoint
 
 ### 💼 Other
 
@@ -531,6 +586,39 @@ All notable changes to this project will be documented in this file.
 - Add ray logging to trace S3DownloadFinished event flow
 - Minimize logging in cleanup commands
 - Minimize logging in cleanup commands (#7356)
+- (service) Add postgresus to predefined docker networks by default (#7367)
+- (service) Appwrite too many redirects error (#7364)
+- (service) Beszel realtime feature not working (#7366)
+- Prevent version downgrades and centralize CDN configuration (#7383)
+- Version downgrade prevention - validate cache and add running version checks
+- Version downgrade prevention with cache validation (#7396)
+- Traefik proxy startup issues - handle null versions and filter predefined networks
+- Centralize service application prerequisites
+- Fragile service name parsing in applyServiceApplicationPrerequisites
+- Fragile service name parsing with hyphens (#7399)
+- Traefik proxy startup issues (#7400)
+- Adjust badge positioning and enhance coolbox utility styles
+- Rename Docker credentials to match Docker Hub naming conventions
+- Replace DOCKER_TOKEN/USERNAME with DOCKERHUB_TOKEN/USERNAME
+- Update version numbers for Coolify and nightly releases
+- Replace DOCKER_TOKEN/USERNAME with DOCKERHUB_TOKEN/USERNAME (#7432)
+- Docker build args injection regex to support service names
+- Docker build args injection regex to support service names (#7433)
+- Prevent ServerManagerJob executionTime mutation across server loop
+- Pass $serverTimezone to shouldRunNow() in ServerCheckJob dispatch
+- Move Sentinel restart logic into processServerTasks method
+- Prevent ServerStorageCheckJob duplication when Sentinel is active
+- Correct time inconsistency in ServerStorageCheckIndependenceTest
+- Pass backup timeout to remote SSH process
+- Pass backup timeout to remote SSH process (#7476)
+- Cancel in-progress deployments when stopping service
+- Service status stuck at starting after stop (#7479)
+- Move sentinel update checks to ServerManagerJob and add tests for hourly dispatch
+- Move sentinel update checks to ServerManagerJob and add tests for hourly dispatch (#7491)
+- Concurrent builds ignored & add deployment queue limit (#7488)
+- Correctly set session for team before creating user token
+- Prevent coolify-helper and coolify-realtime images from being pruned
+- Prevent coolify infrastructure images from being pruned (#7586)
 
 ### 🚜 Refactor
 
@@ -610,6 +698,11 @@ All notable changes to this project will be documented in this file.
 - Send immediate Traefik version notifications instead of delayed aggregation
 - Fix variable scope in docker entrypoint parsing
 - Fix variable scope in docker entrypoint parsing (#7341)
+- Simplify utility classes in CSS and Blade templates
+- Replace queries with cached versions for performance improvements
+- Extract token validation into reusable method
+- Replace debounced search method with x-model.debounce for improved performance
+- Optimize UUID generation for cloud provider tokens using chunked processing
 
 ### 📚 Documentation
 
@@ -643,11 +736,16 @@ All notable changes to this project will be documented in this file.
 - Add comprehensive container status monitoring system documentation
 - Update changelog
 - Replace brittle line number references with maintainable method descriptions
+- Update changelog
+- Update application architecture and database patterns for request-level caching best practices
 
 ### ⚡ Performance
 
 - *(nginx)* Increase client body buffer size to 256k for Sentinel payloads
 - Optimize S3 restore flow with immediate cleanup and progress tracking
+- Add request-level caching and indexes for dashboard optimization (#7533)
+- Remove dead server filtering code from Kernel scheduler
+- Remove dead server filtering code from Kernel scheduler (#7585)
 
 ### 🎨 Styling
 
@@ -5643,6 +5741,7 @@ All notable changes to this project will be documented in this file.
 - Add static ipv4 ipv6 support
 - Server disabled by overflow
 - Preview deployment logs
+- Collect webhooks during maintenance
 - Logs and execute commands with several servers
 
 ### 🐛 Bug Fixes
