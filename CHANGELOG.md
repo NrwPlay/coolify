@@ -1040,6 +1040,7 @@ All notable changes to this project will be documented in this file.
 - *(api)* Change domains to urls
 - *(api)* Improve domains API docs
 - *(api)* Improve app endpoint deprecation description
+- Update changelog
 
 ### ⚡ Performance
 
@@ -1136,6 +1137,9 @@ All notable changes to this project will be documented in this file.
 - Improve pr quality workflow
 - Delete label removal workflow
 - Improve pr quality workflow (#8374)
+- *(repo)* Improve contributor PR template
+- Add anti-slop v0.2 options to the pr-quality check
+- Improve pr template and quality check workflow (#8574)
 
 ## [4.0.0-beta.434] - 2025-10-03
 
